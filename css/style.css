@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Saira', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #0D1E37, #000000);
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+/* BOTAO */
+.btn {
+    text-decoration: none;
+    color: #000000;
+    background-color: #fefefe;
+    border-radius: 1.5rem;
+    margin-block: 1.5rem;
+    transition: .5s;
+    text-align: center;
+    padding-block: .5rem;
+    padding-inline: 2rem;
+    font-size: 1.5rem;
+}
+
+.btn:hover {
+    color: #fefefe;
+    background-color: transparent;
+    border: 1px solid #fefefe;
+}
+
+/* FIM BOTAO */
+
+/* LOGO TOP */
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block: 35px;
+
+    img {
+        width: 25%;
+    }
+}
+
+/* LOGO TOP */
+
+
+/* CONTEÚDO MAXX */
+.container {
+    margin-left: 100px;
+    margin-top: 50px;
+
+    .container__title {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        h1 {
+            color: white;
+            font-size: 60px;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 10px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                font-size: 30px;
+            }
+
+            img {
+                height: 30px;
+            }
+        }
+    }
+
+    .container__content {
+        margin-top: 30px;
+
+        .item__container {
+            margin-bottom: 50px;
+
+            .item__title {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 10px;
+                color: white;
+                width: fit-content;
+
+                p {
+                    font-size: 40px;
+                }
+
+                img {
+                    height: 10px;
+                }
+            }
+
+            .item__content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 50px;
+
+                video {
+                    max-height: 400px;
+                    width: auto;
+                    margin: 10px 0;
+                    border-radius: 10px;
+                    display: block;
+                }
+
+                img {
+                    max-height: 400px;
+                    width: auto;
+                    margin: 10px 0;
+                    border-radius: 10px;
+                    display: block;
+                }
+            }
+
+            .item__content.active {
+                max-height: 10000px;
+            }
+        }
+    }
+}
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #fefefe;
+    color: #000;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.fullscreen-close:hover {
+    background-color: transparent;
+    border: 1px solid #fefefe;
+    color: #fefefe;
+    transition: 0.3s;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-social {
+    text-decoration: none;
+    color: #000000;
+    background-color: #fefefe;
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+
+/* Responsividade */
+/* Notebook */
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 40px;
+        margin-right: 40px;
+
+        .container__title {
+            gap: 20px;
+
+            h1 {
+                font-size: 48px;
+            }
+
+            a {
+                p {
+                    font-size: 24px;
+                }
+
+                img {
+                    height: 25px;
+                }
+            }
+        }
+
+        .container__content {
+            .item__container {
+                .item__title {
+                    p {
+                        font-size: 32px;
+                    }
+
+                    img {
+                        height: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .top {
+        img {
+            width: 35%;
+        }
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        .container__title {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+
+            h1 {
+                font-size: 36px;
+            }
+
+            a {
+                p {
+                    font-size: 20px;
+                }
+
+                img {
+                    height: 20px;
+                }
+            }
+        }
+
+        .container__content {
+            .item__container {
+                .item__title {
+                    gap: 10px;
+
+                    p {
+                        font-size: 26px;
+                    }
+
+                    img {
+                        height: 8px;
+                    }
+                }
+
+                .item__content {
+                    flex-direction: column;
+
+                    video,
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .top {
+        img {
+            width: 50%;
+        }
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding-inline: 1.5rem;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .container {
+        .container__title {
+            h1 {
+                font-size: 28px;
+            }
+
+            a {
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .container__content {
+            .item__container {
+                .item__title {
+                    p {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding-inline: 1rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .btn-social {
+        width: 50%;
+        margin-bottom: 2rem;
+        padding: .9rem;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .top {
+        img {
+            width: 70%;
+        }
+    }
+
+    .container {
+        .container__title {
+            h1 {
+                font-size: 24px;
+            }
+
+            a {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .container__content {
+            .item__container {
+                .item__title {
+                    p {
+                        font-size: 18px;
+                    }
+                }
+
+                .item__content {
+                    gap: 20px;
+                }
+            }
+        }
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+}
